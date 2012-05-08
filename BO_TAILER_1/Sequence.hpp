@@ -16,8 +16,7 @@
 using namespace std;
 using namespace boost_concepts;
 
-template <typename T,
-  template <typename ELEM> class CONT = vector>
+template <typename T, template <typename ELEM> class CONT = vector>
 class Sequences
 {
 private:
