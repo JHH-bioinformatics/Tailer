@@ -11,10 +11,11 @@
 #include<vector>
 #include<deque>
 #include<list>
-#include<array>  ///you don't have to include these, you can just use "forward declaration". let user to include it when necessary, google it.
+#include<array>
+/*you don't have to include these, you can just use "forward declaration". let user to include it when necessary, google it.*/
 #include<boost/iterator/iterator_concepts.hpp>
-using namespace std; //<-- let's try not to use using...
-using namespace boost_concepts; //<---what is this for?
+using namespace std; /*<-- let's try not to use using...*/
+using namespace boost_concepts; /*<---what is this for?*/
 
 template <typename T,
   template <typename, typename > class CONT = vector>
@@ -26,6 +27,7 @@ template <typename T,
  *  	Container container;
  *  };
  */
+
 class Sequences
 {
 private:

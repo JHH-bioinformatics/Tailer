@@ -10,6 +10,6 @@
 
 int main(void)
 {
-	Sequences < string, vector > test;
-	return 0;
+  Sequences < string > test;
+  return 0;
 }
