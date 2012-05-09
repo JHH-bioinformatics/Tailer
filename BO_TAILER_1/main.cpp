@@ -1,15 +1,16 @@
-/*
- * main.cpp
- *
- *  Created on: May 7, 2012
- *      Author: jui-hung
- */
-
-
-#include "Sequence.hpp"
-
-int main(void)
+#include<iostream>
+#include<string>
+#include<vector>
+#include<deque>
+#include<list>
+#include<map>
+#include<set>
+#include<unordered_map>
+#include"Sequence.hpp"
+int main ()
 {
-  Sequences < string > test;
-  return 0;
+  //Sequences<int>                    h1;
+  //Sequences<int, std::deque>        h2;
+  //Sequences<std::string, std::list> h3;
+  Sequences2<int, int, std::map>    h4;
 }
