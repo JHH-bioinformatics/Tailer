@@ -12,4 +12,5 @@ int main ()
   Sequences<int>                    h1;
   Sequences<int, std::deque>        h2;
   Sequences<std::string, std::list> h3;
+  Sequences2<int, int, std::map>    h4;
 }
