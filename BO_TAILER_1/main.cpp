@@ -7,9 +7,11 @@
 
 
 #include "Sequence.hpp"
-
-int main(void)
+#include<iostream>
+#include<string>
+#include<vector>
+#include"sequences.hpp"
+int main ()
 {
-	Sequences < string, vector > test;
-	return 0;
+  Sequences <int> h;
 }
