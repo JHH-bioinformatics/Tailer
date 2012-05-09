@@ -6,13 +6,13 @@
 #define SEQUENCE_HPP_
 
 #include<string>
-#include<vector>
+
 /**
  * forward declaration of vector
- * *
+ * */
 template < typename T, typename Allocator = std::allocator<T> >
 class vector;
-**declaration of TRAIT
+/**declaration of TRAIT
  *
  */
 template <typename T>
@@ -27,11 +27,22 @@ class TRAIT <std::string>
 {
 
 };
+template <>
+class TRAIT <int>
+{
+
+};
+template <>
+class TRAIT <char*>
+{
+
+};
 /**
  * declaration of Sequence class
  * */
-template <typename T, typename T_TRAIT = TRAIT<T>,
-  template <typename, typename > class CONT = std::vector>
+template <typename T,
+  template <typename, typename > class CONT = std::vector,
+  typename T_TRAIT = TRAIT<T>>
 class Sequences
 {
   typedef T        value_type;
@@ -47,20 +58,25 @@ public:
   Sequences (      Sequences&&); ///move constructor
   Sequences& operator=(const Sequences& ); ///copy assignment operator
   Sequences& operator=(      Sequences&&); ///move assignment operator
-  ~Sequences(); ///destructor
+  ~Sequences()
+  {
+    container.clear();
+  } ///destructor
   Iterator& insert  (const T& );
   Iterator& emplace (      T&&);
   Iterator& erase   (Iterator );
   Iterator& erase   (Iterator, Iterator);
 };
 
-template <typename T, typename T_TRAIT = TRAIT <T>,
-  template <typename, typename > class CONT = std::vector>
-class Process : public Sequences<T,T_TRAIT,CONT >
+template <typename T,
+  template <typename, typename > class CONT = std::vector,
+  typename T_TRAIT = TRAIT<T>>
+class Process : public Sequences<T,CONT,T_TRAIT>
 {
 
 };
 
 
 #endif /* SEQUENCE_HPP_ */
+
 
